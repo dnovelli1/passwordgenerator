@@ -40,6 +40,20 @@
 // var expression2 = (b > 128);
 
 
+var x = 8;
+var y = 128;
+
+
+
+
+var useNumber = prompt("How many characters is your password?");
+  if (useNumber >= x && useNumber <= y) {
+    var useCaps = confirm("Would you like to use Capitol Letters?");
+    var useLower = confirm("Would you like to use Lower Case Letters?");
+    var useSymbols = confirm("Would you like to use Symbols?")
+  } else {
+    alert("Your password needs to be between 8-128 characters.")
+  }
 
 
 
@@ -137,6 +151,3 @@
 
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
- function charLimit() {
-  var userCharNumber = prompt("How many characters is your password?")
-}
