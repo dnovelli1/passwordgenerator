@@ -14,14 +14,19 @@ function randomLower() {
 
 }
 
+function randomUpper() {
+
+  return passUpper[Math.floor(Math.random()*passUpper.length)];
+
+}
 
 function randomNumber() {
-  
+
   return passNumber[Math.floor(Math.random()*passNumber.length)];
 
 }
 
-console.log(randomNumber());
+console.log(randomLower());
 
 
 
