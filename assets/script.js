@@ -38,7 +38,8 @@ function generatePassword() {
       wantSymbols = confirm("Would you like to use Symbols?");
       wantNumbers = confirm("Would you like to use Numbers?");
     };
-    // Start sequence of possible outcomes from the user by concatinating into allUserWants
+    // Start sequence of possible outcomes from the user by concatinating into allUserWants.
+    // Try to figure out if there is a way to loop all of the possible outcomes...?
     if (wantUpper && wantLower && wantSymbols && wantNumbers) {
       allUserWants = useUpperCase.concat(useLowerCase, useSymbols, useNumbers);
     }
