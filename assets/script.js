@@ -37,7 +37,7 @@ function generatePassword() {
       wantLower = confirm("Would you like to use Lower Case Letters?");
       wantSymbols = confirm("Would you like to use Symbols?");
       wantNumbers = confirm("Would you like to use Numbers?");
-    }
+    };
     // Start sequence of possible outcomes from the user by concatinating into allUserWants
     if (wantUpper && wantLower && wantSymbols && wantNumbers) {
       allUserWants = useUpperCase.concat(useLowerCase, useSymbols, useNumbers);
@@ -45,7 +45,7 @@ function generatePassword() {
     else if (wantUpper && wantLower && wantSymbols) {
       allUserWants = useUpperCase.concat(useLowerCase, useSymbols);
     }
-    else if (wantUpper && wantNumbers && wantSymbols);
+    else if (wantUpper && wantNumbers && wantSymbols)
       allUserWants = useUpperCase.concat(useNumbers, useSymbols);
 
     // Randomized generator for allUserWants
@@ -56,7 +56,6 @@ function generatePassword() {
 
 }
 
-generatePassword();
 
 
 // Figure out way to push reults taken to the text box...?
