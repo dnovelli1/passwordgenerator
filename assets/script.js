@@ -63,6 +63,27 @@ function generatePassword() {
     else if (wantUpper && wantSymbols) {
       allUserWants = useUpperCase.concat(useSymbols)
     }
+    else if (wantLower && wantNumbers) {
+      allUserWants = useLowerCase.concat(useNumbers)
+    }
+    else if (wantLower && wantSymbols) {
+      allUserWants = useLowerCase.concat(useSymbols)
+    }
+    else if (wantNumbers && wantSymbols) {
+      allUserWants = useNumbers.concat(useSymbols)
+    }
+    else if (wantUpper) {
+      allUserWants = useUpperCase;
+    }
+    else if (wantLower) {
+      allUserWants = useLowerCase;
+    }
+    else if (wantNumbers) {
+      allUserWants = useNumbers;
+    }
+    else if (wantSymbols) {
+      allUserWants = useSymbols;
+    }
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
       var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
@@ -75,4 +96,3 @@ function generatePassword() {
 
 // Figure out way to push reults taken to the text box...?
 // Console.log the for loop provides undefined in the text box but provides random concat of choices.
-// Can not see any lower case characters in the console.
