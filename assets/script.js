@@ -28,6 +28,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
       // This will prompt the user to enter the number of characters they want with restrictions
     userNumber = prompt("How many characters is your password?");
+    var userWants = "";
       // If the number the user chose is less than 8 or greater than 128, the alert will pop up leading them back to the beginning
     if (userNumber < userMinChar || userNumber > userMaxChar) {
       alert("Your password must contain at least 8 characters and no more than 128 characters!");
@@ -87,13 +88,9 @@ function generatePassword() {
     }
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
-      var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
+      userWants += allUserWants[Math.floor(Math.random()*allUserWants.length)];
       console.log(userWants);
     }
-
-}
-
-
-
-// Figure out way to push reults taken to the text box...?
+    return userWants;
+  }
 // Console.log the for loop provides undefined in the text box but provides random concat of choices.
