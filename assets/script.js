@@ -45,9 +45,24 @@ function generatePassword() {
     else if (wantUpper && wantLower && wantSymbols) {
       allUserWants = useUpperCase.concat(useLowerCase, useSymbols);
     }
-    else if (wantUpper && wantNumbers && wantSymbols)
+    else if (wantUpper && wantNumbers && wantSymbols) {
       allUserWants = useUpperCase.concat(useNumbers, useSymbols);
-
+    }
+    else if (wantLower && wantNumbers && wantSymbols) {
+      allUserWants = useLowerCase.concat(use)
+    }
+    else if (wantLower && wantUpper && wantNumbers) {
+      allUserWants = useLowerCase.concat(useUpperCase, useNumbers)
+    }
+    else if (wantUpper && wantLower) {
+      allUserWants = useUpperCase.concat(useLowerCase)
+    }
+    else if (wantUpper && wantNumbers) {
+      allUserWants = useUpperCase.concat(useNumbers)
+    }
+    else if (wantUpper && wantSymbols) {
+      allUserWants = useUpperCase.concat(useSymbols)
+    }
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
       var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
