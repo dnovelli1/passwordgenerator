@@ -29,25 +29,25 @@ generateBtn.addEventListener("click", writePassword);
   password = generatePassword()
 
 function generatePassword() {
-  var  userNumber = prompt("How many characters is your password?");
-    if (userNumber >= userMinChar && userNumber <= userMaxChar) {
-      wantUpper = confirm("Would you like to use Capitol Letters?");
-      wantLower = confirm("Would you like to use Lower Case Letters?");
-      wantSymbols = confirm("Would you like to use Symbols?");
-      wantNumbers = confirm("Would you like to use Numbers?");
-    } else {
-      alert("Your password needs to be between 8-128 characters.")
-      userPreference();
+      userNumber = prompt("How many characters is your password?");
+    if (userNumber <= userMinChar && userNumber >= userMaxChar) {
+      alert("Your password must contain at least 8 characters and no more than 128 characters!")
+      generatePassword();
     }
+    else {
+      
+    }
+      
+      
+      // wantUpper = confirm("Would you like to use Capitol Letters?");
+      // wantLower = confirm("Would you like to use Lower Case Letters?");
+      // wantSymbols = confirm("Would you like to use Symbols?");
+      // wantNumbers = confirm("Would you like to use Numbers?");
+    // } else {
+    //   alert("Your password needs to be between 8-128 characters.")
+    //   userPreference();
+    // }
 }
-
-var randomGenerator = {
-  lower: randomLower,
-  upper: randomUpper,
-  symbol: randomSymbol,
-  number: randomNumber
-};
-
 
 for (var i = 0; i < userNumber; i++) {
   var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
