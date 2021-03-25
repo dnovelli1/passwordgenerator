@@ -1,8 +1,8 @@
 // // // Assignment Code
 var useUpperCase = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var useLowerCase = [ "a", "b", "c", "d" , "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var useNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var useSymbol = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", "<", "=", ">", "?", "@"];
+var useNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var useSymbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", "<", "=", ">", "?", "@"];
 var userMinChar = 8;
 var userMaxChar = 128;
 
@@ -40,17 +40,18 @@ function generatePassword() {
     }
     // Start sequence of possible outcomes from the user by concatinating into allUserWants
     if (wantUpper && wantLower && wantSymbols && wantNumbers) {
-      allUserWants = useUpperCase.concat(useLowerCase, useNumber, useSymbol);
+      allUserWants = useUpperCase.concat(useLowerCase, useSymbols, useNumbers);
     }
     else if (wantUpper && wantLower && wantSymbols) {
-      allUserWants = useUpperCase.concat(useLowerCase, useSymbol);
+      allUserWants = useUpperCase.concat(useLowerCase, useSymbols);
     }
-    else if (wantUpper && wantNumber && wantSymbols);
-      allUserWants = useUpperCase.concat(useNumber, useSymbol);
+    else if (wantUpper && wantNumbers && wantSymbols);
+      allUserWants = useUpperCase.concat(useNumbers, useSymbols);
 
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
       var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
+      console.log(userWants);
     }
 
 }
@@ -59,3 +60,5 @@ generatePassword();
 
 
 // Figure out way to push reults taken to the text box...?
+// Console.log the for loop provides undefined in the text box but provides random concat of choices.
+// Can not see any lower case characters in the console.
