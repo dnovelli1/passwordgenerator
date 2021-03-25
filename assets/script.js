@@ -11,14 +11,14 @@ var wantUpper;
 var wantLower;
 var wantSymbols;
 var wantNumbers;
+var userNumber;
+var allUserWants;
 
 var generateBtn = document.querySelector("#generate");
 
 
 
 // // Write password to the #password input
-
-var password = generatePassword();
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
 
@@ -26,7 +26,7 @@ passwordText.value = password;
 
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
+  password = generatePassword()
 
 function generatePassword() {
   var  userNumber = prompt("How many characters is your password?");
@@ -49,18 +49,22 @@ var randomGenerator = {
 };
 
 
-function randomLower() {
-  return useLowerCase[Math.floor(Math.random()*useLowerCase.length)];
+for (var i = 0; i < userNumber; i++) {
+  var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
 }
 
-function randomUpper() {
-  return useUpperCase[Math.floor(Math.random()*useUpperCase.length)];
-}
-function randomSymbol() {
-  return useSymbol[Math.floor(Math.random()*useSymbol.length)];
-}
+// function randomLower() {
+//   return useLowerCase[Math.floor(Math.random()*useLowerCase.length)];
+// }
 
-function randomNumber() {
-  return useNumber[Math.floor(Math.random()*useNumber.length)]
-}
+// function randomUpper() {
+//   return useUpperCase[Math.floor(Math.random()*useUpperCase.length)];
+// }
+// function randomSymbol() {
+//   return useSymbol[Math.floor(Math.random()*useSymbol.length)];
+// }
+
+// function randomNumber() {
+//   return useNumber[Math.floor(Math.random()*useNumber.length)]
+// }
 
