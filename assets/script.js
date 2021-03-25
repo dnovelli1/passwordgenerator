@@ -1,6 +1,4 @@
 // // // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 var useUpperCase = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var useLowerCase = [ "a", "b", "c", "d" , "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var useNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -8,20 +6,15 @@ var useSymbol = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":"
 var userMinChar = 8;
 var userMaxChar = 128;
 
+// Storage for the user's wants.
+var wantUpper;
+var wantLower;
+var wantSymbols;
+var wantNumbers;
+
+var generateBtn = document.querySelector("#generate");
 
 
-function userPreference() {
-  var  userNumber = prompt("How many characters is your password?");
-    if (userNumber >= userMinChar && userNumber <= userMaxChar) {
-      var wantUpper = confirm("Would you like to use Capitol Letters?");
-      var wantLower = confirm("Would you like to use Lower Case Letters?");
-      var wantSymbols = confirm("Would you like to use Symbols?");
-    } else {
-      alert("Your password needs to be between 8-128 characters.")
-      userPreference();
-    }
-  }
-userPreference();
 
 // // Write password to the #password input
 
@@ -35,6 +28,18 @@ passwordText.value = password;
 generateBtn.addEventListener("click", writePassword);
 
 
+function generatePassword() {
+  var  userNumber = prompt("How many characters is your password?");
+    if (userNumber >= userMinChar && userNumber <= userMaxChar) {
+      wantUpper = confirm("Would you like to use Capitol Letters?");
+      wantLower = confirm("Would you like to use Lower Case Letters?");
+      wantSymbols = confirm("Would you like to use Symbols?");
+      wantNumbers = confirm("Would you like to use Numbers?");
+    } else {
+      alert("Your password needs to be between 8-128 characters.")
+      userPreference();
+    }
+}
 
 var randomGenerator = {
   lower: randomLower,
@@ -58,3 +63,4 @@ function randomSymbol() {
 function randomNumber() {
   return useNumber[Math.floor(Math.random()*useNumber.length)]
 }
+
