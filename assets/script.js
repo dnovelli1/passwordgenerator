@@ -14,57 +14,37 @@ var wantNumbers;
 var userNumber;
 var allUserWants;
 
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 
 
 // // Write password to the #password input
-var passwordText = document.querySelector("#password");
-passwordText.value = password;
+// var passwordText = document.querySelector("#password");
+// passwordText.value = password;
 
 // }
 
-// // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword());
   password = generatePassword()
 
 function generatePassword() {
-      userNumber = prompt("How many characters is your password?");
-    if (userNumber <= userMinChar && userNumber >= userMaxChar) {
-      alert("Your password must contain at least 8 characters and no more than 128 characters!")
+      // This will prompt the user to enter the number of characters they want with restrictions
+    userNumber = prompt("How many characters is your password?");
+      // If the number the user chose is less than 8 or greater than 128, the alert will pop up leading them back to the beginning
+    if (userNumber < userMinChar || userNumber > userMaxChar) {
+      alert("Your password must contain at least 8 characters and no more than 128 characters!");
       generatePassword();
+    } else {
+      wantUpper = confirm("Would you like to use Capitol Letters?");
+      wantLower = confirm("Would you like to use Lower Case Letters?");
+      wantSymbols = confirm("Would you like to use Symbols?");
+      wantNumbers = confirm("Would you like to use Numbers?");
     }
-    else {
-      
-    }
-      
-      
-      // wantUpper = confirm("Would you like to use Capitol Letters?");
-      // wantLower = confirm("Would you like to use Lower Case Letters?");
-      // wantSymbols = confirm("Would you like to use Symbols?");
-      // wantNumbers = confirm("Would you like to use Numbers?");
-    // } else {
-    //   alert("Your password needs to be between 8-128 characters.")
-    //   userPreference();
-    // }
-}
+  }
+generatePassword();
 
-for (var i = 0; i < userNumber; i++) {
-  var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
-}
+// for (var i = 0; i < userNumber; i++) {
+//   var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
 
-// function randomLower() {
-//   return useLowerCase[Math.floor(Math.random()*useLowerCase.length)];
 // }
-
-// function randomUpper() {
-//   return useUpperCase[Math.floor(Math.random()*useUpperCase.length)];
-// }
-// function randomSymbol() {
-//   return useSymbol[Math.floor(Math.random()*useSymbol.length)];
-// }
-
-// function randomNumber() {
-//   return useNumber[Math.floor(Math.random()*useNumber.length)]
-// }
-
