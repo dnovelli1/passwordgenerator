@@ -14,19 +14,16 @@ var wantNumbers;
 var userNumber;
 var allUserWants;
 
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
-
-
-// // Write password to the #password input
-// var passwordText = document.querySelector("#password");
-// passwordText.value = password;
-
-// }
-
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword());
-//   password = generatePassword()
+generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
       // This will prompt the user to enter the number of characters they want with restrictions
@@ -45,9 +42,20 @@ function generatePassword() {
     if (wantUpper && wantLower && wantSymbols && wantNumbers) {
       allUserWants = useUpperCase.concat(useLowerCase, useNumber, useSymbol);
     }
-  }
-// For loop needed to supply random allUserWants
-// for (var i = 0; i < userNumber; i++) {
-//   var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
+    else if (wantUpper && wantLower && wantSymbols) {
+      allUserWants = useUpperCase.concat(useLowerCase, useSymbol);
+    }
+    else if (wantUpper && wantNumber && wantSymbols);
+      allUserWants = useUpperCase.concat(useNumber, useSymbol);
 
-// }
+    // Randomized generator for allUserWants
+    for (var i = 0; i < userNumber; i++) {
+      var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
+    }
+
+}
+
+generatePassword();
+
+
+// Figure out way to push reults taken to the text box...?
