@@ -25,8 +25,8 @@ var allUserWants;
 // }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
-  password = generatePassword()
+// generateBtn.addEventListener("click", writePassword());
+//   password = generatePassword()
 
 function generatePassword() {
       // This will prompt the user to enter the number of characters they want with restrictions
@@ -41,9 +41,12 @@ function generatePassword() {
       wantSymbols = confirm("Would you like to use Symbols?");
       wantNumbers = confirm("Would you like to use Numbers?");
     }
+    // Start sequence of possible outcomes from the user by concatinating into allUserWants
+    if (wantUpper && wantLower && wantSymbols && wantNumbers) {
+      allUserWants = useUpperCase.concat(useLowerCase, useNumber, useSymbol);
+    }
   }
-generatePassword();
-
+// For loop needed to supply random allUserWants
 // for (var i = 0; i < userNumber; i++) {
 //   var userWants = allUserWants[Math.floor(Math.random()*allUserWants.length)];
 
