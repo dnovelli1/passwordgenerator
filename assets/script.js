@@ -30,7 +30,7 @@ function generatePassword() {
     userNumber = prompt("How many characters is your password?");
     var userWants = "";
       // If the number the user chose is less than 8 or greater than 128, the alert will pop up leading them back to the beginning
-    if (userNumber > userMinChar && userNumber < userMaxChar) {
+    if (userNumber >= userMinChar && userNumber <= userMaxChar) {
       wantUpper = confirm("Would you like to use Capitol Letters?");
       wantLower = confirm("Would you like to use Lower Case Letters?");
       wantSymbols = confirm("Would you like to use Symbols?");
