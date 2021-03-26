@@ -30,14 +30,15 @@ function generatePassword() {
     userNumber = prompt("How many characters is your password?");
     var userWants = "";
       // If the number the user chose is less than 8 or greater than 128, the alert will pop up leading them back to the beginning
-    if (userNumber < userMinChar || userNumber > userMaxChar) {
-      alert("Your password must contain at least 8 characters and no more than 128 characters!");
-      generatePassword();
-    } else {
+    if (userNumber > userMinChar && userNumber < userMaxChar) {
       wantUpper = confirm("Would you like to use Capitol Letters?");
       wantLower = confirm("Would you like to use Lower Case Letters?");
       wantSymbols = confirm("Would you like to use Symbols?");
       wantNumbers = confirm("Would you like to use Numbers?");
+    } else if (userNumber == null){
+    } else {
+        alert("Your password must contain at least 8 characters and no more than 128 characters!");
+        generatePassword();
     };
     // Start sequence of possible outcomes from the user by concatinating into allUserWants.
     // Try to figure out if there is a way to loop all of the possible outcomes...?
@@ -51,7 +52,7 @@ function generatePassword() {
       allUserWants = useUpperCase.concat(useNumbers, useSymbols);
     }
     else if (wantLower && wantNumbers && wantSymbols) {
-      allUserWants = useLowerCase.concat(use)
+      allUserWants = useLowerCase.concat(useNumbers, useSymbols)
     }
     else if (wantLower && wantUpper && wantNumbers) {
       allUserWants = useLowerCase.concat(useUpperCase, useNumbers)
@@ -89,7 +90,6 @@ function generatePassword() {
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
       userWants += allUserWants[Math.floor(Math.random()*allUserWants.length)];
-      console.log(userWants);
     }
     return userWants;
   }
