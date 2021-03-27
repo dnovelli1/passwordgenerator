@@ -16,30 +16,12 @@
 ![Site](assets/images/preview.png)
 
 ## How was it made?
-``Javascript
+Javascript  
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
-function generatePassword() {
-      // This will prompt the user to enter the number of characters they want with restrictions
-    userNumber = prompt("How many characters is your password?");
-    var userWants = "";
-      // If the number the user chose is less than 8 or greater than 128, the alert will pop up leading them back to the beginning
-    if (userNumber >= userMinChar && userNumber <= userMaxChar) {
-      wantUpper = confirm("Would you like to use Capitol Letters?");
-      wantLower = confirm("Would you like to use Lower Case Letters?");
-      wantSymbols = confirm("Would you like to use Symbols?");
-      wantNumbers = confirm("Would you like to use Numbers?");
-    } else if (userNumber == null){
-    } else {
-        alert("Your password must contain at least 8 characters and no more than 128 characters!");
-        generatePassword();
+![Code-Snippet](assets/images/jspreview.png)
+
+
 
 ## The full website is deployed here! Click and take a look!
 
