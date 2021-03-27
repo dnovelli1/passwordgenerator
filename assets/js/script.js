@@ -42,6 +42,10 @@ function generatePassword() {
         generatePassword();
     };
     // Start sequence of possible outcomes from the user by concatinating into allUserWants.
+    if (!wantUpper && !wantLower && !wantSymbols && !wantNumbers) {
+      alert("You need to set a criteria!");
+      generatePassword();
+    }
     if (wantUpper === true) {
       allUserWants = allUserWants.concat(useUpperCase);
     }
