@@ -13,8 +13,7 @@
 
 ## Site Preview
 
-
-
+![Site](assets/images/preview.png)
 
 ## How was it made?
 ``Javascript
@@ -44,7 +43,7 @@ function generatePassword() {
 
 ## The full website is deployed here! Click and take a look!
 
-![Site](assets/images/preview.png)
+[Full-Site](https://dnovelli1.github.io/passwordgenerator/)
 
 ## Links to my other Professional Site's!
 
