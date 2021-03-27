@@ -44,7 +44,7 @@ function generatePassword() {
 
 ## The full website is deployed here! Click and take a look!
 
-![Site](assets/images/preview.PNG)
+![Site](assets/images/preview.png)
 
 ## Links to my other Professional Site's!
 
