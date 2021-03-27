@@ -42,7 +42,6 @@ function generatePassword() {
         generatePassword();
     };
     // Start sequence of possible outcomes from the user by concatinating into allUserWants.
-    // Try to figure out if there is a way to loop all of the possible outcomes...?
     if (wantUpper === true) {
       allUserWants = allUserWants.concat(useUpperCase);
     }
@@ -58,7 +57,6 @@ function generatePassword() {
     // Randomized generator for allUserWants
     for (var i = 0; i < userNumber; i++) {
       userWants += allUserWants[Math.floor(Math.random()*allUserWants.length)];
-    }
+    } 
     return userWants;
-  }
-    // Console.log the for loop provides undefined in the text box but provides random concat of choices.
+};
