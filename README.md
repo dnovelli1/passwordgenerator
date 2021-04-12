@@ -33,3 +33,7 @@ Javascript
 
 [GitHub](https://github.com/dnovelli1)
 
+## License
+
+Licensed under the [MIT License](LICENSE).
+
